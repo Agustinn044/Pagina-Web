@@ -3,8 +3,8 @@ console.clear();
 // config
 const OFFSET = 7; // distance from edge of container
 const EXTRA_INSET = 2;
-const MIN_START_RATIO = 0.8;
-const MIN_THUMB = 20;
+const MIN_START_RATIO = 0.2;
+const MIN_THUMB = 50;
 const SEGMENTS = 50;
 const btnVerMas = document.getElementById('btnVerMas');
 const wrapperExtra = document.getElementById('wrapperExtra');
@@ -189,4 +189,10 @@ btnVerMas.addEventListener("click", () => {
         scrollFluido(destino, 1200);
     }
 
+});
+
+history.scrollRestoration = "manual"; // para que cuando recarge la pagina no se quede en el mismo lugar
+
+window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
 });

@@ -7,19 +7,21 @@
 
 .wrapper{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
+    gap: 27px;
+    padding: 5px 0 15px;
     height: auto;
-    width: min(100%, 600px);
+    width: min(100%, 750px);
     margin: 0 auto;
 }
 
 .wrapper-extra {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    width: min(100%, 600px);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    width: min(100%, 980px);
     margin: 0 auto;
+    padding: 5px 0 15px;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -35,7 +37,8 @@
 .wrapper-extra.visible {
     opacity: 1;
     overflow: hidden;
-    max-height: 2000px; 
+    max-height: 8000px; 
+    padding-bottom: 40px;
     transform: translateY(10px); /* distancia entre tablas nuevas y viejas */
     transition: /* en mostrar tablas nuevas*/
         opacity 1s ease-in-out,
@@ -49,13 +52,7 @@
 	--card-border-radius: 50px;	
     --thumb-color: rgb(3, 1, 163);
     --thumb-color-active: rgb(23, 21, 160);
-    --thumb-width: 4;
-    --thumb-width-active: 6;
-    
-    --track-color: transparent;
-    --track-color-active: light-dark(#EEE,#222);
-    --track-width: 4;
-    --track-width-active: 6;
+    --thumb-width: 6;
 
 	&.box-2{
     --card-border-radius: 50px;
@@ -68,58 +65,89 @@
     width: 100%;
     height: 500px;
     contain:size;
-    margin: 3rem auto;
-    border: 1px solid var(--clr-lines);
+    margin: 30px auto;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(11, 12, 22, 0.92), rgba(21, 21, 41, 0.88));
     border-radius: var(--card-border-radius);
+
     overflow: hidden;  
     & h2{
     text-wrap: balance;
-    font-size: 1.1rem;
+    font-size: 18px;
     }
 
-.scroll-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}    
+    .-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }    
 
-.imagen1 {
-    width: 150px; 
-    height: 150px;
-    object-fit: contain;
-    border-radius: 30px;
+    .imagen1, .imagen2, .imagen3, .imagen4,.imagen5 {
+        display: block;
+        width: 170px;
+        height: 170px;
+        margin: 0 auto 10px;
+        object-fit: contain;
+        border-radius: 30px;    
+    }
+
 }
 
-.imagen2 {
-    width: 170px; 
-    height: 170px;
-    object-fit: contain;
-    border-radius: 30px;
+.wrapper-extra .scroll-container {  /* color fondo box */
+    height: 560px;
+    margin: 0;
+    background: linear-gradient(180deg, rgba(17, 18, 31, 0.96), rgba(12, 14, 27, 0.9));
+    border: 1px solid rgba(255, 215, 0, 0.18);
 }
 
+.wrapper-extra .scroll-content {
+    padding: 12px 13px 10px 10px;
+}
+
+.wrapper-extra .encabezado {
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
+    color: #f7d44a;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(255, 213, 79, 0.25);
+    font-family: 'Poppins', sans-serif;
 }
 	
 
-.scroll-content {
-    height: 100%;
+.scroll-content { 
+    height: 100%;    
     overflow-y: auto;
-    padding:1rem 1.5rem 1rem 1rem;
-	
-    overflow-y: scroll;
+    padding: 10px 15px 10px 10px; /* texto dentro de la caja */
+    scrollbar-width: none;  
+}
 
-	 	scrollbar-width: none; /* Firefox */
-   	-ms-overflow-style: none; /* IE and Edge Legacy */
-		&::-webkit-scrollbar {
-			display: none; /* Chrome, Safari, and Opera */
-		}
-	}
+.scroll-content::-webkit-scrollbar {
+    width: 8px;
+}
 
-.scroll-content p {
-    font-size: .95rem;
+.scroll-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ffd84d, #f5a300);    border-radius: 10px;    border-radius: 999px;
+}
+
+.scroll-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ffe37d, #f4a100);
+}
+
+.scroll-content p { /* texto dentro de la caja */
+    font-size: 16px;
     line-height: 1.8;
     text-align: justify;
-    color: #ececec;
-    margin-bottom: 1rem;
+    color: #fefafa;
+    margin: 0 10px 12px 0px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    text-wrap: pretty;
 }
 
 .scrollbar-svg {
@@ -190,7 +218,7 @@ box-sizing: border-box;
     inset: 0;
     overflow: hidden;
     z-index: -1;
-    background: #000;
+    background: #020326;
 }
 
 #stars {
@@ -2308,12 +2336,14 @@ h2 {
     font-size: 28px;
     font-weight: 400;
     text-align: center;
+    line-height: 1.5;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgb(11, 37, 180);
-    text-shadow:
-        0 0 4px rgba(30, 70, 255, 0.45),
-        0 0 10px rgba(20, 50, 220, 0.25);
+    background: linear-gradient(180deg, rgb(240, 180, 20) 0%, rgb(240, 180, 20) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(240, 180, 20, 0.4);
     margin: 10px 0 25px;
     position: relative;
 }
@@ -2331,7 +2361,7 @@ h3 {
 }
 
 .titulo {
-    font-family: serif;
+    font-family: "Playfair Display SC", serif;
     font-size: 50px;
     font-weight: 400;
     text-align: center;
@@ -2355,14 +2385,6 @@ h3 {
     margin-bottom: 1rem;
     letter-spacing: 1px;
 }
-
-.imagen3, .imagen4, .imagen5{
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-}
-
-
 
 button {
 position: relative;
