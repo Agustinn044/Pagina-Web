@@ -63,9 +63,9 @@
 		
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 450px;
     contain:size;
-    margin: 30px auto;
+    
     border: 1px solid rgba(255,255,255,.14);
     background: linear-gradient(180deg, rgba(11, 12, 22, 0.92), rgba(21, 21, 41, 0.88));
     border-radius: var(--card-border-radius);
@@ -84,8 +84,8 @@
 
     .imagen1, .imagen2, .imagen3, .imagen4,.imagen5 {
         display: block;
-        width: 170px;
-        height: 170px;
+        width: 150px;
+        height: 150px;
         margin: 0 auto 10px;
         object-fit: contain;
         border-radius: 30px;    
@@ -94,7 +94,7 @@
 }
 
 .wrapper-extra .scroll-container {  /* color fondo box */
-    height: 560px;
+    height: 500px;
     margin: 0;
     background: linear-gradient(180deg, rgba(17, 18, 31, 0.96), rgba(12, 14, 27, 0.9));
     border: 1px solid rgba(255, 215, 0, 0.18);
@@ -2319,7 +2319,6 @@ header{
     text-align: center;
     text-wrap: balance;
     width: min(100%, 60ch);
-    margin: 0 auto;
 }
 
 header p {
@@ -2327,7 +2326,6 @@ header p {
     line-height: 1.7;
     color: #d8d8d8;
     max-width: 50ch;
-    margin: 0 auto;
 }
 
 
@@ -2344,7 +2342,6 @@ h2 {
     background-clip: text;
     color: transparent;
     text-shadow: 0 0 8px rgba(240, 180, 20, 0.4);
-    margin: 10px 0 25px;
     position: relative;
 }
 
@@ -2373,9 +2370,7 @@ h3 {
     background-clip: text;
     color: transparent;
     text-shadow: 0 0 8px rgba(240, 180, 20, 0.4);
-    padding-bottom: 0.3em;
     position: relative;
-    margin-top: 60px;
 }
 
 .encabezado {
@@ -2387,7 +2382,7 @@ h3 {
 }
 
 button {
-position: relative;
+position: sticky;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -2399,6 +2394,7 @@ overflow: hidden;
 cursor: pointer;
 border: none;
 margin-bottom: 20px;
+align-self: center;
 }
 
 button:after {

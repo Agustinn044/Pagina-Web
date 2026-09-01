@@ -2,13 +2,45 @@ body {
 min-height: 100vh;
 margin: 0;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
+position: fixed;
+inset: 0;
+overflow: hidden;
+background: radial-gradient(circle at center, #111827 0%, #030712 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+}
+
+.titulo-pagina {
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 2px;
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: #ffb81c;
+  -webkit-text-stroke: 1px #0d1b3e;
+  text-shadow: 
+    0px 0px 12px rgba(255, 184, 28, 0.5),
+    0px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 50px;
+  gap: 40px;
+  max-width: 700px;
+  width: 100%;
+  justify-items: center;
 }
 
 .card {
 overflow: visible;
-width: 190px;
+width: 210px;
 height: 254px;
 }
 
@@ -38,10 +70,10 @@ content: ' ';
 display: block;
 width: 160px;
 height: 160%;
-background: linear-gradient(90deg, transparent, #ff9966, 
-#ff9966, 
-#ff9966, 
-#ff9966, transparent);
+background: linear-gradient(90deg, transparent, #0066ff, 
+#0066ff, 
+#e9d200, 
+#e9d200, transparent);
 animation: rotation_481 5000ms infinite linear;
 
 }
@@ -69,17 +101,62 @@ transform: rotateY(180deg);
 }
 
 .back-content {
-position: absolute;
-width: 99%;
-height: 99%;
-background-color: #151515;
-border-radius: 5px;
-color: white;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 30px;
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    background-color: #151515;
+    border-radius: 5px;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.back-content strong { /* Apellido */
+    font-size: 24px;
+    color: #ffb81c;
+    margin-bottom: 2px;
+}
+
+.back-content p:first-of-type { /* Apodo */
+    font-size: 13px;
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.back-content p {
+    margin: 3px 0;
+    font-size: 13px;
+}
+
+.back-content table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 11px;
+}
+
+.back-content td {
+    padding: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.back-content td:first-child {
+    color: #a17c2c;
+    font-weight: bold;
+    text-align: left;
+}
+
+.back-content td:last-child {
+    text-align: right;
+    color: #2268f4;
 }
 
 .card:hover .content {
