@@ -2319,6 +2319,7 @@ header{
     text-align: center;
     text-wrap: balance;
     width: min(100%, 60ch);
+    gap: 5px;
 }
 
 header p {
@@ -2343,6 +2344,7 @@ h2 {
     color: transparent;
     text-shadow: 0 0 8px rgba(240, 180, 20, 0.4);
     position: relative;
+    margin-top: -15px;
 }
 
 h3 {
@@ -2371,6 +2373,7 @@ h3 {
     color: transparent;
     text-shadow: 0 0 8px rgba(240, 180, 20, 0.4);
     position: relative;
+    margin-top: 80px;
 }
 
 .encabezado {
