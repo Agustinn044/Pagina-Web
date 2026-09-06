@@ -9,12 +9,10 @@ const SEGMENTS = 50;
 const btnVerMas = document.getElementById('btnVerMas');
 const wrapperExtra = document.getElementById('wrapperExtra');
 
-// init scrollbars - each has their own scoped functions and settings
 document.querySelectorAll('[data-scrollbar]').forEach(container => {
   initCurvedScrollbar(container);
 });
 
-// function - init scrolled container
 function initCurvedScrollbar(container) {
   const content = container.querySelector('.scroll-content');
   
@@ -168,6 +166,11 @@ btnVerMas.addEventListener("click", () => {
 
     wrapperExtra.classList.toggle("visible");
 
+    document.querySelectorAll('.scroll-content').forEach(content => {
+        content.scrollTop = 0; // Vuelve el texto arriba de todo
+        content.dispatchEvent(new Event('scroll')); // Notifica a la barra SVG para que se recalcule
+    });
+
     if (wrapperExtra.classList.contains("visible")) {
 
         btnVerMas.querySelector("span").textContent = "Ver menos";
@@ -191,8 +194,3 @@ btnVerMas.addEventListener("click", () => {
 
 });
 
-history.scrollRestoration = "manual"; // para que cuando recarge la pagina no se quede en el mismo lugar
-
-window.addEventListener("load", () => {
-    window.scrollTo(0, 0);
-});

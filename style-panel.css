@@ -1,9 +1,9 @@
 .titulo{
 font-family: Playfair Display SC;
-font-size: 50px;
+font-size: clamp(2rem, 6vw, 50px); /* Ajuste de tamaño fluido para celulares */
 font-weight: 400;
 text-align: center;
-line-height: 1.5;
+line-height: 1.2;
 letter-spacing: 2px;
 text-transform: uppercase;
 background: linear-gradient(180deg, #ffd84d 0%, #bca152 30%, #d2ae2c 100%);
@@ -54,7 +54,7 @@ html, body {
 }
 
 body {
-    background-image: url("4621939.jpg");
+    background-image: url("imagen-inicio/bombonera.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -157,5 +157,32 @@ button svg g {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+
+    html, body {
+        overflow: hidden; 
+        height: 100vh;
+    }
+
+    button {
+        margin: 5px 0px;
+        margin-top: 55px; 
+        padding: 0;
+    }
+
+    nav button {
+        padding: 0 0.5rem !important; 
+    }
+
+    nav {
+        gap: 0px; 
+    }
+
+    nav button>svg {
+        width: 120px;
+        height: 120px;
     }
 }

@@ -2446,6 +2446,73 @@ animation: scaleUp 0.3s ease-in-out;
 }
 }
 
+}
 
+@media (max-width: 768px) {
+
+    .titulo{
+        font-size: 40px;
+    }
+
+    html, body {
+        scrollbar-width: thin; 
+        scrollbar-color: #ffd84d rgba(15, 23, 42, 0.5); 
+        overflow-y: auto !important; 
+    }
+
+    body::-webkit-scrollbar {
+        width: 6px; 
+        display: block !important;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.6); 
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #ffd84d, #d2ae2c); 
+        border-radius: 10px;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background: #ffe37d;
+    }
+
+    .wrapper, 
+    .wrapper-extra {
+        width: 70%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .scroll-container {
+        height: 380px;
+        --card-border-radius: 30px;
+    }
+
+    .wrapper-extra .scroll-container {
+        height: 380px;
+    }
+
+    .scroll-content::-webkit-scrollbar {
+        width: 6px; 
+    }
+
+    .scroll-content::-webkit-scrollbar-thumb {
+        background: #ffd84d; 
+        border-radius: 10px;
+    }
+
+    .scroll-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    button {
+        display: flex !important;
+        margin: 20px auto 40px !important;
+        position: relative !important; 
+        z-index: 100;
+    }
 
 }
