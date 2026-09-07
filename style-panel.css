@@ -1,21 +1,20 @@
-.titulo{
-font-family: Playfair Display SC;
-font-size: clamp(2rem, 6vw, 50px); /* Ajuste de tamaño fluido para celulares */
-font-weight: 400;
-text-align: center;
-line-height: 1.2;
-letter-spacing: 2px;
-text-transform: uppercase;
-background: linear-gradient(180deg, #ffd84d 0%, #bca152 30%, #d2ae2c 100%);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-padding: 2.5rem 0 0.3em;
-padding-top: 53px;
-position: relative;
-margin: 0;
+.titulo {
+    font-family: Playfair Display SC;
+    font-size: 70px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: rgb(228, 179, 73);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 2.5rem 0 0.3em;
+    padding-top: 53px;
+    position: relative;
+    margin: 0;
 }
-
 *{
     box-sizing: border-box;
 }
@@ -76,9 +75,7 @@ nav {
     --_clr-txt: rgb(209, 195, 0);
     --_clr-txt-svg: rgb(21, 4, 168);
     --_ani-speed: 6s; /* speed of rotating text */
-
     display: flex;
-    /*flex-wrap: wrap;*/
     gap: 1rem;
     font-size: 1.4rem;
 }
@@ -94,14 +91,16 @@ nav button {
     z-index: 1;    
 }
 
-nav button > span:first-of-type {
-    color: rgb(16, 2, 136);
-    font-weight: 200;
+nav button > span:first-of-type { /* botones */
+    color: rgb(7, 2, 50);
+    font-weight: 150;
     transition: color 300ms ease-in-out, transform 300ms ease-in-out;
     grid-area: stack;
+    font-size: 35px;
 }
 
-nav button > span:last-of-type {
+nav button > .material-symbols-outlined{ /* emoji botones */
+    font-size: 35px;
     color: rgb(240, 180, 20);
     margin-top: 0.25rem;
     transform: scale(0);
@@ -116,15 +115,17 @@ nav button:hover>span:first-of-type {
     transform: scale(0);
 }
 
-nav button:focus-visible>span:last-of-type,
-nav button:hover>span:last-of-type {
+nav button:focus-visible>.material-symbols-outlined,
+nav button:hover>.material-symbols-outlined {
     transform: scale(1);
 }
 
-nav button>svg {
+nav button>svg { /* palabras en hhover botones*/
     position: absolute;
-    width: 200px;
-    height: 200px;
+    font-weight: 150;
+    font-size: 25px;
+    width: 280px;
+    height: 300px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -150,7 +151,6 @@ button svg g {
     animation: rotate var(--_ani-speed) linear infinite;
 }
 
-
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -161,6 +161,10 @@ button svg g {
 }
 
 @media (max-width: 768px) {
+
+    .titulo{
+        font-size: 37px; 
+    }
 
     html, body {
         overflow: hidden; 
@@ -174,7 +178,7 @@ button svg g {
     }
 
     nav button {
-        padding: 0 0.5rem !important; 
+        padding: 0 0.4rem !important; 
     }
 
     nav {
